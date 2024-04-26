@@ -31,6 +31,7 @@ watch(() => user.age, // watch reactive() property
 
 <template>
   <main>
+    <!-- HOME comment -->
     <h1>HOME : {{ h1desc }}</h1>
 
     <input type="text" v-model="inputval">
