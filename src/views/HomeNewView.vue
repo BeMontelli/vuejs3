@@ -1,5 +1,5 @@
 <script setup>
-import {ref, reactive, computed} from "vue";
+import {ref, reactive, computed, watch} from "vue";
 
 const h1desc = "Hello";
 const inputval = ref("val");
@@ -18,6 +18,15 @@ const sentence = computed(() => {
   const years = (user.age > 1) ? "years" : "year";
   return "Hello, I'm "+user.name+" & I'm "+user.age+" "+years+" old.";
 });
+
+watch(inputval, (newVal, oldVal) => { // watch ref() simple var
+  console.log(newVal, oldVal);
+});
+
+watch(() => user.age, // watch reactive() property
+    (newValue, oldValue) => {
+      console.log(newValue, oldValue);
+    });
 </script>
 
 <template>
