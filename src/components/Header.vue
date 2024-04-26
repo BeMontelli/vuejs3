@@ -1,5 +1,6 @@
 <script setup>
-
+import { titleviewStore } from '@/stores/titleview'
+const titleview = titleviewStore();
 </script>
 
 <template>
@@ -14,7 +15,7 @@
       </nav>
     </div>
 
-    <span class="title"></span>
+    <div class="title">PAGE : {{titleview.name}}</div>
   </header>
 </template>
 

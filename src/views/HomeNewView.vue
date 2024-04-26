@@ -1,5 +1,12 @@
 <script setup>
+import { titleviewStore } from '@/stores/titleview'
+const titleview = titleviewStore();
+titleview.set("Home New");
+
 import {ref, reactive, computed, watch} from "vue";
+
+import { useCounterStore } from '@/stores/counter'
+const counter = useCounterStore()
 
 const h1desc = "Hello";
 const inputval = ref("val");
@@ -57,6 +64,10 @@ watch(() => user.age, // watch reactive() property
     <div v-else class="child">User child</div>
 
     <p>{{ sentence }}</p>
+
+    <hr>
+
+    COUNT {{ counter.count }}
   </main>
 </template>
 
